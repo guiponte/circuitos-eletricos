@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuitos Elétricos - Teoria e Exercícios</title>
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --secondary-color: #64b5f6;
+            --accent-color: #0d47a1;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --header-height: 60px;
+            --sidebar-width: 250px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            height: var(--header-height);
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        header h1 {
+            font-size: 1.5rem;
+        }
+        
+        #theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+        
+        .container {
+            display: flex;
+            min-height: 100vh;
+            padding-top: var(--header-height);
+        }
+        
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: white;
+            height: calc(100vh - var(--header-height));
+            overflow-y: auto;
+            position: fixed;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            left: 10px;
+            top: 15px;
+            z-index: 101;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .sidebar h2 {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            color: var(--primary-color);
+        }
+        
+        .sidebar-section {
+            margin-bottom: 20px;
+        }
+        
+        .sidebar-section h3 {
+            padding: 10px 20px;
+            background-color: var(--light-bg);
+            color: var(--accent-color);
+            cursor: pointer;
+        }
+        
+        .sidebar-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-section li {
+            padding: 8px 20px 8px 30px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .sidebar-section li:hover, .sidebar-section li.active {
+            background-color: #e3f2fd;
+            color: var(--primary-color);
+        }
+        
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+        
+        .content-section {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .content-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        
+        .content-section p {
+            margin-bottom: 15px;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .exercise {
+            background-color: #e3f2fd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .exercise h4 {
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+        
+        .solution-toggle {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 3px;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .solution {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid var(--accent-color);
+        }
+        
+        img, video {
+            max-width: 100%;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .math-block {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            margin-top: 20px;
+            margin-left: var(--sidebar-width);
+        }
+        
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .sidebar-toggle {
+                display: block;
+            }
+            
+            .main-content, footer {
+                margin-left: 0;
+            }
+            
+            header h1 {
+                margin-left: 40px;
+            }
+        }
+        
+        /* Dark theme */
+        body.dark-theme {
+            --text-color: #f5f5f5;
+            --light-bg: #222;
+            background-color: #121212;
+        }
+        
+        body.dark-theme .sidebar,
+        body.dark-theme .content-section {
+            background-color: #1e1e1e;
+        }
+        
+        body.dark-theme .sidebar-section h3 {
+            background-color: #2d2d2d;
+        }
+        
+        body.dark-theme .sidebar-section li:hover,
+        body.dark-theme .sidebar-section li.active {
+            background-color: #333;
+            color: var(--secondary-color);
+        }
+        
+        body.dark-theme .exercise {
+            background-color: #2d2d2d;
+        }
+        
+        body.dark-theme .solution {
+            background-color: #3d3d3d;
+        }
+        
+        body.dark-theme code, 
+        body.dark-theme pre,
+        body.dark-theme .math-block {
+            background-color: #2d2d2d;
+        }
+    </style>
+</head>
+<body>
+    <button class="sidebar-toggle">☰</button>
+    <header>
+        <h1>Circuitos Elétricos</h1>
+        <button id="theme-toggle">🌓</button>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Conteúdo</h2>
+            
+            <div class="sidebar-section">
+                <h3>Teoria Básica</h3>
+                <ul>
+                    <li class="active" data-target="leis-fundamentais">Leis Fundamentais</li>
+                    <li data-target="componentes-basicos">Componentes Básicos</li>
+                    <li data-target="analise-corrente-continua">Análise em Corrente Contínua</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Análise de Circuitos</h3>
+                <ul>
+                    <li data-target="teoremas-rede">Teoremas de Rede</li>
+                    <li data-target="circuitos-rc">Circuitos RC</li>
+                    <li data-target="circuitos-rl">Circuitos RL</li>
+                    <li data-target="circuitos-rlc">Circuitos RLC</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Corrente Alternada</h3>
+                <ul>
+                    <li data-target="analise-senoidal">Análise Senoidal</li>
+                    <li data-target="potencia-ac">Potência em CA</li>
+                    <li data-target="ressonancia">Ressonância</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Exercícios</h3>
+                <ul>
+                    <li data-target="exercicios-leis">Exercícios - Leis Fundamentais</li>
+                    <li data-target="exercicios-teoremas">Exercícios - Teoremas</li>
+                    <li data-target="exercicios-ca">Exercícios - Corrente Alternada</li>
+                </ul>
+            </div>
+        </aside>
+        
+        <main class="main-content">
+            <!-- Teoria Básica -->
+            <section id="leis-fundamentais" class="content-section">
+                <h2>Leis Fundamentais de Circuitos</h2>
+                
+                <p>As leis fundamentais de circuitos elétricos formam a base para toda a análise de circuitos. Vamos estudar as principais leis que regem o comportamento dos circuitos elétricos.</p>
+                
+                <h3>Lei de Ohm</h3>
+                <p>A Lei de Ohm estabelece que a corrente que flui através de um condutor entre dois pontos é diretamente proporcional à tensão entre esses dois pontos, e inversamente proporcional à resistência entre eles.</p>
+                
+                <div class="math-block">
+                    <strong>V = R × I</strong><br>
+                    Onde:<br>
+                    V = tensão (volts)<br>
+                    R = resistência (ohms)<br>
+                    I = corrente (amperes)
+                </div>
+                
+                <h3>Leis de Kirchhoff</h3>
+                <p>As Leis de Kirchhoff são fundamentais para a análise de circuitos complexos:</p>
+                
+                <p><strong>Lei das Correntes de Kirchhoff (LCK):</strong> A soma algébrica das correntes em qualquer nó de um circuito elétrico é zero.</p>
+                
+                <div class="math-block">
+                    <strong>∑ I = 0</strong><br>
+                    (A soma das correntes que entram é igual à soma das correntes que saem)
+                </div>
+                
+                <p><strong>Lei das Tensões de Kirchhoff (LTK):</strong> A soma algébrica das tensões em qualquer malha fechada é zero.</p>
+                
+                <div class="math-block">
+                    <strong>∑ V = 0</strong><br>
+                    (A soma das quedas de tensão é igual à soma das elevações de tensão)
+                </div>
+            </section>
+            
+            <section id="componentes-basicos" class="content-section" style="display: none;">
+                <h2>Componentes Básicos de Circuitos</h2>
+                
+                <h3>Resistores</h3>
+                <p>Resistores são componentes que limitam o fluxo de corrente elétrica. A resistência é medida em ohms (Ω) e segue a Lei de Ohm.</p>
+                
+                <p><strong>Associação de Resistores:</strong></p>
+                <ul>
+                    <li><strong>Série:</strong> R<sub>eq</sub> = R₁ + R₂ + ... + R<sub>n</sub></li>
+                    <li><strong>Paralelo:</strong> 1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + ... + 1/R<sub>n</sub></li>
+                </ul>
+                
+                <h3>Capacitores</h3>
+                <p>Capacitores armazenam energia em um campo elétrico. A capacitância é medida em farads (F).</p>
+                
+                <p><strong>Associação de Capacitores:</strong></p>
+                <ul>
+                    <li><strong>Série:</strong> 1/C<sub>eq</sub> = 1/C₁ + 1/C₂ + ... + 1/C<sub>n</sub></li>
+                    <li><strong>Paralelo:</strong> C<sub>eq</sub> = C₁ + C₂ + ... + C<sub>n</sub></li>
+                </ul>
+                
+                <h3>Indutores</h3>
+                <p>Indutores armazenam energia em um campo magnético. A indutância é medida em henrys (H).</p>
+                
+                <p><strong>Associação de Indutores:</strong></p>
+                <ul>
+                    <li><strong>Série:</strong> L<sub>eq</sub> = L₁ + L₂ + ... + L<sub>n</sub></li>
+                    <li><strong>Paralelo:</strong> 1/L<sub>eq</sub> = 1/L₁ + 1/L₂ + ... + 1/L<sub>n</sub></li>
+                </ul>
+            </section>
+            
+            <section id="exercicios-leis" class="content-section" style="display: none;">
+                <h2>Exercícios - Leis Fundamentais</h2>
+                
+                <div class="exercise">
+                    <h4>Exercício 1: Lei de Ohm</h4>
+                    <p>Um resistor de 220Ω está conectado a uma fonte de tensão de 12V. Calcule a corrente que flui pelo resistor.</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p>Usando a Lei de Ohm: I = V/R</p>
+                        <p>I = 12V / 220Ω = 0,0545A = 54,5mA</p>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h4>Exercício 2: Leis de Kirchhoff</h4>
+                    <p>No circuito abaixo, determine a corrente em cada resistor usando as Leis de Kirchhoff:</p>
+                    <p>O circuito consiste em uma fonte de 9V conectada a três resistores: R₁ = 1kΩ, R₂ = 2kΩ, e R₃ = 3kΩ, onde R₂ e R₃ estão em paralelo, e R₁ está em série com a combinação.</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p><strong>Passo 1:</strong> Calcular a resistência equivalente dos resistores em paralelo.</p>
+                        <p>1/R<sub>eq(2,3)</sub> = 1/2kΩ + 1/3kΩ = 3/6kΩ + 2/6kΩ = 5/6kΩ</p>
+                        <p>R<sub>eq(2,3)</sub> = 6kΩ/5 = 1,2kΩ</p>
+                        
+                        <p><strong>Passo 2:</strong> Calcular a resistência total.</p>
+                        <p>R<sub>total</sub> = R₁ + R<sub>eq(2,3)</sub> = 1kΩ + 1,2kΩ = 2,2kΩ</p>
+                        
+                        <p><strong>Passo 3:</strong> Calcular a corrente total usando a Lei de Ohm.</p>
+                        <p>I<sub>total</sub> = 9V / 2,2kΩ = 4,09mA</p>
+                        
+                        <p><strong>Passo 4:</strong> Calcular as correntes em R₂ e R₃.</p>
+                        <p>V<sub>R₂,R₃</sub> = I<sub>total</sub> × R<sub>eq(2,3)</sub> = 4,09mA × 1,2kΩ = 4,91V</p>
+                        <p>I<sub>R₂</sub> = 4,91V / 2kΩ = 2,45mA</p>
+                        <p>I<sub>R₃</sub> = 4,91V / 3kΩ = 1,64mA</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Conteúdo oculto por padrão, será exibido via JavaScript -->
+            <section id="analise-corrente-continua" class="content-section" style="display: none;">
+                <h2>Análise em Corrente Contínua</h2>
+                <p>Conteúdo sobre análise de circuitos em corrente contínua...</p>
+            </section>
+            
+            <section id="teoremas-rede" class="content-section" style="display: none;">
+                <h2>Teoremas de Rede</h2>
+                <p>Conteúdo sobre teoremas de rede (Thévenin, Norton, Superposição)...</p>
+            </section>
+            
+            <section id="circuitos-rc" class="content-section" style="display: none;">
+                <h2>Circuitos RC</h2>
+                <p>Conteúdo sobre circuitos RC...</p>
+            </section>
+            
+            <section id="circuitos-rl" class="content-section" style="display: none;">
+                <h2>Circuitos RL</h2>
+                <p>Conteúdo sobre circuitos RL...</p>
+            </section>
+            
+            <section id="circuitos-rlc" class="content-section" style="display: none;">
+                <h2>Circuitos RLC</h2>
+                <p>Conteúdo sobre circuitos RLC...</p>
+            </section>
+            
+            <section id="analise-senoidal" class="content-section" style="display: none;">
+                <h2>Análise Senoidal</h2>
+                <p>Conteúdo sobre análise senoidal...</p>
+            </section>
+            
+            <section id="potencia-ac" class="content-section" style="display: none;">
+                <h2>Potência em CA</h2>
+                <p>Conteúdo sobre potência em corrente alternada...</p>
+            </section>
+            
+            <section id="ressonancia" class="content-section" style="display: none;">
+                <h2>Ressonância</h2>
+                <p>Conteúdo sobre ressonância em circuitos...</p>
+            </section>
+            
+            <section id="exercicios-teoremas" class="content-section" style="display: none;">
+                <h2>Exercícios - Teoremas</h2>
+                <p>Exercícios sobre teoremas de rede...</p>
+            </section>
+            
+            <section id="exercicios-ca" class="content-section" style="display: none;">
+                <h2>Exercícios - Corrente Alternada</h2>
+                <p>Exercícios sobre corrente alternada...</p>
+            </section>
+        </main>
+    </div>
+    
+    <footer>
+        <p>© 2025 - Site de Circuitos Elétricos</p>
+        <p>Criado para estudo e aprendizado</p>
+    </footer>
+    
+    <script>
+        // Toggle sidebar on mobile
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+        
+        // Toggle dark/light theme
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+        });
+        
+        // Navigation functionality
+        const navItems = document.querySelectorAll('.sidebar-section li');
+        const contentSections = document.querySelectorAll('.content-section');
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // Update active class
+                navItems.forEach(navItem => navItem.classList.remove('active'));
+                item.classList.add('active');
+                
+                // Show selected content
+                const targetId = item.getAttribute('data-target');
+                contentSections.forEach(section => {
+                    section.style.display = section.id === targetId ? 'block' : 'none';
+                });
+                
+                // On mobile, close sidebar after selection
+                if (window.innerWidth <= 768) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        });
+        
+        // Solution toggles
+        const solutionToggleButtons = document.querySelectorAll('.solution-toggle');
+        
+        solutionToggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const solution = button.nextElementSibling;
+                
+                if (solution.style.display === 'block') {
+                    solution.style.display = 'none';
+                    button.textContent = 'Ver Solução';
+                } else {
+                    solution.style.display = 'block';
+                    button.textContent = 'Ocultar Solução';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
