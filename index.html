@@ -286,49 +286,61 @@
             <h2>Conteúdo</h2>
             
             <div class="sidebar-section">
-                <h3>Teoria Básica</h3>
+                <h3>Aulas</h3>
                 <ul>
-                    <li class="active" data-target="leis-fundamentais">Leis Fundamentais</li>
-                    <li data-target="componentes-basicos">Componentes Básicos</li>
-                    <li data-target="analise-corrente-continua">Análise em Corrente Contínua</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Análise de Circuitos</h3>
-                <ul>
-                    <li data-target="teoremas-rede">Teoremas de Rede</li>
-                    <li data-target="circuitos-rc">Circuitos RC</li>
-                    <li data-target="circuitos-rl">Circuitos RL</li>
-                    <li data-target="circuitos-rlc">Circuitos RLC</li>
-                </ul>
-            </div>
-            
-            <div class="sidebar-section">
-                <h3>Corrente Alternada</h3>
-                <ul>
-                    <li data-target="analise-senoidal">Análise Senoidal</li>
-                    <li data-target="potencia-ac">Potência em CA</li>
-                    <li data-target="ressonancia">Ressonância</li>
+                    <li class="active" data-target="aula1">Aula 1 - Introdução, Kirchhoff's, Divisores</li>
+                    <li data-target="aula2">Aula 2 - Análise Nodal e Malhas</li>
+                    <li data-target="aula3">Aula 3 - Thévenin, Norton, Sobreposição</li>
+                    <li data-target="aula4">Aula 4 - OpAmp, Números Complexos</li>
+                    <li data-target="aula5">Aula 5 - Análise em AC</li>
+                    <li data-target="aula6">Aula 6 - Potência complexa</li>
+                    <li data-target="aula7">Aula 7 - Fator de Potência</li>
+                    <li data-target="aula8">Aula 8 - Redes 2 portos / quadripolos</li>
+                    <li data-target="aula9">Aula 9 - Resposta em frequência</li>
+                    <li data-target="aula10">Aula 10 - Indutância e Transformadores</li>
+                    <li data-target="aula11">Aula 11 - Circuitos RC e RL</li>
+                    <li data-target="aula12">Aula 12 - Transformada de Laplace</li>
+                    <li data-target="aula13">Aula 13 - Circuitos RLC</li>
                 </ul>
             </div>
             
             <div class="sidebar-section">
                 <h3>Exercícios</h3>
                 <ul>
-                    <li data-target="exercicios-leis">Exercícios - Leis Fundamentais</li>
-                    <li data-target="exercicios-teoremas">Exercícios - Teoremas</li>
+                    <li data-target="exercicios-leis">Exercícios - Leis de Kirchhoff</li>
+                    <li data-target="exercicios-nodal">Exercícios - Análise Nodal</li>
+                    <li data-target="exercicios-theorems">Exercícios - Thévenin/Norton</li>
                     <li data-target="exercicios-ca">Exercícios - Corrente Alternada</li>
+                    <li data-target="exercicios-potencia">Exercícios - Potência em CA</li>
+                    <li data-target="exercicios-transitorio">Exercícios - Análise Transitória</li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Material Complementar</h3>
+                <ul>
+                    <li data-target="formulario">Formulário</li>
+                    <li data-target="simuladores">Simuladores de Circuitos</li>
+                    <li data-target="referencias">Referências Bibliográficas</li>
                 </ul>
             </div>
         </aside>
         
         <main class="main-content">
-            <!-- Teoria Básica -->
-            <section id="leis-fundamentais" class="content-section">
-                <h2>Leis Fundamentais de Circuitos</h2>
+            <!-- Aula 1 -->
+            <section id="aula1" class="content-section">
+                <h2>Aula 1 - Introdução, Kirchhoff's, Divisores</h2>
                 
-                <p>As leis fundamentais de circuitos elétricos formam a base para toda a análise de circuitos. Vamos estudar as principais leis que regem o comportamento dos circuitos elétricos.</p>
+                <h3>Introdução aos Circuitos Elétricos</h3>
+                <p>Circuitos elétricos são arranjos de componentes que permitem o fluxo controlado de energia elétrica. Esta aula introduz os conceitos fundamentais que regem o comportamento dos circuitos elétricos.</p>
+                
+                <h3>Conceitos Básicos</h3>
+                <ul>
+                    <li><strong>Tensão (V):</strong> Diferença de potencial elétrico entre dois pontos, medida em volts (V).</li>
+                    <li><strong>Corrente (I):</strong> Fluxo de carga elétrica, medido em amperes (A).</li>
+                    <li><strong>Resistência (R):</strong> Oposição ao fluxo de corrente, medida em ohms (Ω).</li>
+                    <li><strong>Potência (P):</strong> Taxa de transferência de energia, medida em watts (W).</li>
+                </ul>
                 
                 <h3>Lei de Ohm</h3>
                 <p>A Lei de Ohm estabelece que a corrente que flui através de um condutor entre dois pontos é diretamente proporcional à tensão entre esses dois pontos, e inversamente proporcional à resistência entre eles.</p>
@@ -357,191 +369,240 @@
                     <strong>∑ V = 0</strong><br>
                     (A soma das quedas de tensão é igual à soma das elevações de tensão)
                 </div>
-            </section>
-            
-            <section id="componentes-basicos" class="content-section" style="display: none;">
-                <h2>Componentes Básicos de Circuitos</h2>
                 
-                <h3>Resistores</h3>
-                <p>Resistores são componentes que limitam o fluxo de corrente elétrica. A resistência é medida em ohms (Ω) e segue a Lei de Ohm.</p>
+                <h3>Divisores de Tensão e Corrente</h3>
                 
-                <p><strong>Associação de Resistores:</strong></p>
-                <ul>
-                    <li><strong>Série:</strong> R<sub>eq</sub> = R₁ + R₂ + ... + R<sub>n</sub></li>
-                    <li><strong>Paralelo:</strong> 1/R<sub>eq</sub> = 1/R₁ + 1/R₂ + ... + 1/R<sub>n</sub></li>
-                </ul>
+                <p><strong>Divisor de Tensão:</strong> Em um circuito com resistores em série, a tensão se distribui proporcionalmente aos valores das resistências.</p>
                 
-                <h3>Capacitores</h3>
-                <p>Capacitores armazenam energia em um campo elétrico. A capacitância é medida em farads (F).</p>
+                <div class="math-block">
+                    <strong>V<sub>R1</sub> = V<sub>total</sub> × (R1 / R<sub>total</sub>)</strong>
+                </div>
                 
-                <p><strong>Associação de Capacitores:</strong></p>
-                <ul>
-                    <li><strong>Série:</strong> 1/C<sub>eq</sub> = 1/C₁ + 1/C₂ + ... + 1/C<sub>n</sub></li>
-                    <li><strong>Paralelo:</strong> C<sub>eq</sub> = C₁ + C₂ + ... + C<sub>n</sub></li>
-                </ul>
+                <p><strong>Divisor de Corrente:</strong> Em um circuito com resistores em paralelo, a corrente se distribui inversamente proporcionalmente aos valores das resistências.</p>
                 
-                <h3>Indutores</h3>
-                <p>Indutores armazenam energia em um campo magnético. A indutância é medida em henrys (H).</p>
+                <div class="math-block">
+                    <strong>I<sub>R1</sub> = I<sub>total</sub> × (R<sub>eq</sub> / R1)</strong><br>
+                    Onde R<sub>eq</sub> é a resistência equivalente do circuito paralelo.
+                </div>
                 
-                <p><strong>Associação de Indutores:</strong></p>
-                <ul>
-                    <li><strong>Série:</strong> L<sub>eq</sub> = L₁ + L₂ + ... + L<sub>n</sub></li>
-                    <li><strong>Paralelo:</strong> 1/L<sub>eq</sub> = 1/L₁ + 1/L₂ + ... + 1/L<sub>n</sub></li>
-                </ul>
-            </section>
-            
-            <section id="exercicios-leis" class="content-section" style="display: none;">
-                <h2>Exercícios - Leis Fundamentais</h2>
-                
+                <h3>Exercícios Propostos</h3>
                 <div class="exercise">
-                    <h4>Exercício 1: Lei de Ohm</h4>
-                    <p>Um resistor de 220Ω está conectado a uma fonte de tensão de 12V. Calcule a corrente que flui pelo resistor.</p>
+                    <h4>Exercício 1.1</h4>
+                    <p>Calcule a corrente que flui através de um resistor de 470Ω conectado a uma bateria de 9V.</p>
                     
                     <button class="solution-toggle">Ver Solução</button>
                     <div class="solution">
                         <p>Usando a Lei de Ohm: I = V/R</p>
-                        <p>I = 12V / 220Ω = 0,0545A = 54,5mA</p>
+                        <p>I = 9V / 470Ω = 0,0191A = 19,1mA</p>
                     </div>
                 </div>
                 
                 <div class="exercise">
-                    <h4>Exercício 2: Leis de Kirchhoff</h4>
-                    <p>No circuito abaixo, determine a corrente em cada resistor usando as Leis de Kirchhoff:</p>
-                    <p>O circuito consiste em uma fonte de 9V conectada a três resistores: R₁ = 1kΩ, R₂ = 2kΩ, e R₃ = 3kΩ, onde R₂ e R₃ estão em paralelo, e R₁ está em série com a combinação.</p>
+                    <h4>Exercício 1.2</h4>
+                    <p>Para o circuito abaixo, determine a tensão em cada resistor usando o divisor de tensão:</p>
+                    <p>Três resistores em série: R₁ = 1kΩ, R₂ = 2kΩ, e R₃ = 3kΩ, conectados a uma fonte de 12V.</p>
                     
                     <button class="solution-toggle">Ver Solução</button>
                     <div class="solution">
-                        <p><strong>Passo 1:</strong> Calcular a resistência equivalente dos resistores em paralelo.</p>
-                        <p>1/R<sub>eq(2,3)</sub> = 1/2kΩ + 1/3kΩ = 3/6kΩ + 2/6kΩ = 5/6kΩ</p>
-                        <p>R<sub>eq(2,3)</sub> = 6kΩ/5 = 1,2kΩ</p>
+                        <p><strong>Passo 1:</strong> Calcular a resistência total.</p>
+                        <p>R<sub>total</sub> = R₁ + R₂ + R₃ = 1kΩ + 2kΩ + 3kΩ = 6kΩ</p>
                         
-                        <p><strong>Passo 2:</strong> Calcular a resistência total.</p>
-                        <p>R<sub>total</sub> = R₁ + R<sub>eq(2,3)</sub> = 1kΩ + 1,2kΩ = 2,2kΩ</p>
-                        
-                        <p><strong>Passo 3:</strong> Calcular a corrente total usando a Lei de Ohm.</p>
-                        <p>I<sub>total</sub> = 9V / 2,2kΩ = 4,09mA</p>
-                        
-                        <p><strong>Passo 4:</strong> Calcular as correntes em R₂ e R₃.</p>
-                        <p>V<sub>R₂,R₃</sub> = I<sub>total</sub> × R<sub>eq(2,3)</sub> = 4,09mA × 1,2kΩ = 4,91V</p>
-                        <p>I<sub>R₂</sub> = 4,91V / 2kΩ = 2,45mA</p>
-                        <p>I<sub>R₃</sub> = 4,91V / 3kΩ = 1,64mA</p>
+                        <p><strong>Passo 2:</strong> Aplicar o divisor de tensão para cada resistor.</p>
+                        <p>V<sub>R1</sub> = 12V × (1kΩ / 6kΩ) = 2V</p>
+                        <p>V<sub>R2</sub> = 12V × (2kΩ / 6kΩ) = 4V</p>
+                        <p>V<sub>R3</sub> = 12V × (3kΩ / 6kΩ) = 6V</p>
                     </div>
                 </div>
             </section>
             
-            <!-- Conteúdo oculto por padrão, será exibido via JavaScript -->
-            <section id="analise-corrente-continua" class="content-section" style="display: none;">
-                <h2>Análise em Corrente Contínua</h2>
-                <p>Conteúdo sobre análise de circuitos em corrente contínua...</p>
-            </section>
-            
-            <section id="teoremas-rede" class="content-section" style="display: none;">
-                <h2>Teoremas de Rede</h2>
-                <p>Conteúdo sobre teoremas de rede (Thévenin, Norton, Superposição)...</p>
-            </section>
-            
-            <section id="circuitos-rc" class="content-section" style="display: none;">
-                <h2>Circuitos RC</h2>
-                <p>Conteúdo sobre circuitos RC...</p>
-            </section>
-            
-            <section id="circuitos-rl" class="content-section" style="display: none;">
-                <h2>Circuitos RL</h2>
-                <p>Conteúdo sobre circuitos RL...</p>
-            </section>
-            
-            <section id="circuitos-rlc" class="content-section" style="display: none;">
-                <h2>Circuitos RLC</h2>
-                <p>Conteúdo sobre circuitos RLC...</p>
-            </section>
-            
-            <section id="analise-senoidal" class="content-section" style="display: none;">
-                <h2>Análise Senoidal</h2>
-                <p>Conteúdo sobre análise senoidal...</p>
-            </section>
-            
-            <section id="potencia-ac" class="content-section" style="display: none;">
-                <h2>Potência em CA</h2>
-                <p>Conteúdo sobre potência em corrente alternada...</p>
-            </section>
-            
-            <section id="ressonancia" class="content-section" style="display: none;">
-                <h2>Ressonância</h2>
-                <p>Conteúdo sobre ressonância em circuitos...</p>
-            </section>
-            
-            <section id="exercicios-teoremas" class="content-section" style="display: none;">
-                <h2>Exercícios - Teoremas</h2>
-                <p>Exercícios sobre teoremas de rede...</p>
-            </section>
-            
-            <section id="exercicios-ca" class="content-section" style="display: none;">
-                <h2>Exercícios - Corrente Alternada</h2>
-                <p>Exercícios sobre corrente alternada...</p>
-            </section>
-        </main>
-    </div>
-    
-    <footer>
-        <p>© 2025 - Site de Circuitos Elétricos</p>
-        <p>Criado para estudo e aprendizado</p>
-    </footer>
-    
-    <script>
-        // Toggle sidebar on mobile
-        const sidebarToggle = document.querySelector('.sidebar-toggle');
-        const sidebar = document.querySelector('.sidebar');
-        
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-        
-        // Toggle dark/light theme
-        const themeToggle = document.getElementById('theme-toggle');
-        
-        themeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-        });
-        
-        // Navigation functionality
-        const navItems = document.querySelectorAll('.sidebar-section li');
-        const contentSections = document.querySelectorAll('.content-section');
-        
-        navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                // Update active class
-                navItems.forEach(navItem => navItem.classList.remove('active'));
-                item.classList.add('active');
+            <!-- Aula 2 -->
+            <section id="aula2" class="content-section" style="display: none;">
+                <h2>Aula 2 - Análise Nodal e Malhas</h2>
                 
-                // Show selected content
-                const targetId = item.getAttribute('data-target');
-                contentSections.forEach(section => {
-                    section.style.display = section.id === targetId ? 'block' : 'none';
-                });
+                <h3>Análise Nodal</h3>
+                <p>A análise nodal é um método sistemático para determinar as tensões em um circuito. Baseia-se na Lei das Correntes de Kirchhoff (LCK) e na Lei de Ohm.</p>
                 
-                // On mobile, close sidebar after selection
-                if (window.innerWidth <= 768) {
-                    sidebar.classList.remove('active');
-                }
-            });
-        });
-        
-        // Solution toggles
-        const solutionToggleButtons = document.querySelectorAll('.solution-toggle');
-        
-        solutionToggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const solution = button.nextElementSibling;
+                <p><strong>Passos para Análise Nodal:</strong></p>
+                <ol>
+                    <li>Identificar o nó de referência (terra) e os nós principais</li>
+                    <li>Atribuir variáveis de tensão a cada nó (em relação ao nó de referência)</li>
+                    <li>Aplicar LCK em cada nó (exceto o nó de referência)</li>
+                    <li>Resolver o sistema de equações resultante</li>
+                </ol>
                 
-                if (solution.style.display === 'block') {
-                    solution.style.display = 'none';
-                    button.textContent = 'Ver Solução';
-                } else {
-                    solution.style.display = 'block';
-                    button.textContent = 'Ocultar Solução';
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+                <div class="math-block">
+                    <p>Para cada nó, a equação terá a forma:</p>
+                    <p>∑ (V<sub>nó</sub> - V<sub>vizinho</sub>) / R<sub>entre nós</sub> = I<sub>injetada</sub></p>
+                </div>
+                
+                <h3>Análise de Malhas</h3>
+                <p>A análise de malhas é baseada na Lei das Tensões de Kirchhoff (LTK) e consiste em determinar as correntes que circulam nas malhas independentes do circuito.</p>
+                
+                <p><strong>Passos para Análise de Malhas:</strong></p>
+                <ol>
+                    <li>Identificar as malhas independentes do circuito</li>
+                    <li>Atribuir correntes de malha circulando em sentido horário (convenção)</li>
+                    <li>Aplicar LTK em cada malha</li>
+                    <li>Resolver o sistema de equações resultante</li>
+                </ol>
+                
+                <div class="math-block">
+                    <p>Para cada malha, a equação terá a forma:</p>
+                    <p>∑ R × I<sub>malha</sub> - ∑ R × I<sub>malha vizinha</sub> = ∑ V<sub>fontes</sub></p>
+                </div>
+                
+                <h3>Exemplos Resolvidos</h3>
+                <div class="exercise">
+                    <h4>Exemplo de Análise Nodal</h4>
+                    <p>Considere um circuito com três resistores e duas fontes de tensão. Determine as tensões nodais.</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p>Solução por análise nodal passo a passo...</p>
+                    </div>
+                </div>
+                
+                <div class="exercise">
+                    <h4>Exemplo de Análise de Malhas</h4>
+                    <p>Considere um circuito com duas malhas. Determine as correntes de malha.</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p>Solução por análise de malhas passo a passo...</p>
+                    </div>
+                </div>
+                
+                <h3>Exercícios Propostos</h3>
+                <div class="exercise">
+                    <h4>Exercício 2.1</h4>
+                    <p>Usando análise nodal, determine as tensões nos nós do circuito abaixo...</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p>Resolução passo a passo...</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Aula 3 -->
+            <section id="aula3" class="content-section" style="display: none;">
+                <h2>Aula 3 - Thévenin, Norton, Sobreposição e Máxima Transferência de Potência</h2>
+                
+                <h3>Teorema de Thévenin</h3>
+                <p>O Teorema de Thévenin estabelece que qualquer circuito linear pode ser substituído por um circuito equivalente composto por uma fonte de tensão em série com uma resistência.</p>
+                
+                <p><strong>Passos para encontrar o equivalente de Thévenin:</strong></p>
+                <ol>
+                    <li>Identificar os terminais de interesse (a e b)</li>
+                    <li>Calcular a tensão de circuito aberto (V<sub>Th</sub>) entre os terminais</li>
+                    <li>Calcular a resistência equivalente (R<sub>Th</sub>) com todas as fontes independentes desativadas</li>
+                </ol>
+                
+                <h3>Teorema de Norton</h3>
+                <p>O Teorema de Norton é um complemento ao Teorema de Thévenin, onde o circuito é representado por uma fonte de corrente em paralelo com uma resistência.</p>
+                
+                <p><strong>Passos para encontrar o equivalente de Norton:</strong></p>
+                <ol>
+                    <li>Identificar os terminais de interesse (a e b)</li>
+                    <li>Calcular a corrente de curto-circuito (I<sub>N</sub>) entre os terminais</li>
+                    <li>Calcular a resistência equivalente (R<sub>N</sub>) com todas as fontes independentes desativadas</li>
+                </ol>
+                
+                <p><strong>Relação entre Thévenin e Norton:</strong></p>
+                <div class="math-block">
+                    <p>I<sub>N</sub> = V<sub>Th</sub> / R<sub>Th</sub></p>
+                    <p>R<sub>N</sub> = R<sub>Th</sub></p>
+                </div>
+                
+                <h3>Princípio da Sobreposição</h3>
+                <p>Em circuitos lineares, a resposta (tensão ou corrente) em qualquer elemento é a soma algébrica das respostas causadas por cada fonte independente atuando sozinha.</p>
+                
+                <p><strong>Passos para aplicar o Princípio da Sobreposição:</strong></p>
+                <ol>
+                    <li>Considerar apenas uma fonte por vez (substituir fontes de tensão por curto-circuitos e fontes de corrente por circuitos abertos)</li>
+                    <li>Calcular a resposta parcial devido a cada fonte</li>
+                    <li>Somar todas as respostas parciais para obter a resposta total</li>
+                </ol>
+                
+                <h3>Máxima Transferência de Potência</h3>
+                <p>Para transferir a máxima potência de uma fonte para uma carga, a resistência da carga deve ser igual à resistência equivalente de Thévenin vista dos terminais da carga.</p>
+                
+                <div class="math-block">
+                    <p>R<sub>L</sub> = R<sub>Th</sub> para máxima transferência de potência</p>
+                    <p>P<sub>max</sub> = V<sub>Th</sub>² / (4 × R<sub>Th</sub>)</p>
+                </div>
+                
+                <h3>Exercícios Propostos</h3>
+                <div class="exercise">
+                    <h4>Exercício 3.1</h4>
+                    <p>Determine o circuito equivalente de Thévenin para o circuito abaixo visto dos terminais a-b...</p>
+                    
+                    <button class="solution-toggle">Ver Solução</button>
+                    <div class="solution">
+                        <p>Resolução passo a passo...</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Aula 4 -->
+            <section id="aula4" class="content-section" style="display: none;">
+                <h2>Aula 4 - OpAmp, Números Complexos, Impedâncias</h2>
+                
+                <h3>Amplificadores Operacionais (OpAmp)</h3>
+                <p>Amplificadores operacionais são dispositivos eletrônicos que amplificam a diferença de tensão entre suas entradas.</p>
+                
+                <p><strong>Características ideais de um OpAmp:</strong></p>
+                <ul>
+                    <li>Ganho de tensão infinito</li>
+                    <li>Impedância de entrada infinita</li>
+                    <li>Impedância de saída zero</li>
+                    <li>Largura de banda infinita</li>
+                </ul>
+                
+                <p><strong>Regras básicas para análise de circuitos com OpAmp ideal:</strong></p>
+                <ol>
+                    <li>As correntes nas entradas são zero (I<sub>+</sub> = I<sub>-</sub> = 0)</li>
+                    <li>As tensões nas entradas são iguais (V<sub>+</sub> = V<sub>-</sub>)</li>
+                </ol>
+                
+                <h3>Configurações básicas de OpAmp:</h3>
+                <ul>
+                    <li><strong>Amplificador Inversor:</strong> V<sub>out</sub> = -(R<sub>f</sub>/R<sub>in</sub>) × V<sub>in</sub></li>
+                    <li><strong>Amplificador Não Inversor:</strong> V<sub>out</sub> = (1 + R<sub>f</sub>/R<sub>in</sub>) × V<sub>in</sub></li>
+                    <li><strong>Seguidor de Tensão (Buffer):</strong> V<sub>out</sub> = V<sub>in</sub></li>
+                    <li><strong>Amplificador Somador:</strong> V<sub>out</sub> = -(R<sub>f</sub>/R<sub>1</sub>)V<sub>1</sub> - (R<sub>f</sub>/R<sub>2</sub>)V<sub>2</sub> - ...</li>
+                </ul>
+                
+                <h3>Números Complexos</h3>
+                <p>Números complexos são fundamentais para análise de circuitos em corrente alternada.</p>
+                
+                <p><strong>Representações:</strong></p>
+                <ul>
+                    <li><strong>Forma retangular:</strong> z = a + jb</li>
+                    <li><strong>Forma polar:</strong> z = |z|∠θ</li>
+                    <li><strong>Forma exponencial:</strong> z = |z|e<sup>jθ</sup></li>
+                </ul>
+                
+                <p><strong>Operações com números complexos:</strong></p>
+                <ul>
+                    <li><strong>Adição/Subtração:</strong> (a + jb) ± (c + jd) = (a ± c) + j(b ± d)</li>
+                    <li><strong>Multiplicação (forma polar):</strong> |z<sub>1</sub>|∠θ<sub>1</sub> × |z<sub>2</sub>|∠θ<sub>2</sub> = |z<sub>1</sub>|×|z<sub>2</sub>|∠(θ<sub>1</sub>+θ<sub>2</sub>)</li>
+                    <li><strong>Divisão (forma polar):</strong> |z<sub>1</sub>|∠θ<sub>1</sub> ÷ |z<sub>2</sub>|∠θ<sub>2</sub> = |z<sub>1</sub>|/|z<sub>2</sub>|∠(θ<sub>1</sub>-θ<sub>2</sub>)</li>
+                </ul>
+                
+                <h3>Impedâncias</h3>
+                <p>Impedância é a oposição total que um circuito oferece ao fluxo de corrente alternada.</p>
+                
+                <p><strong>Impedância complexa:</strong></p>
+                <div class="math-block">
+                    <p>Z = R + jX</p>
+                    <p>Onde:</p>
+                    <p>R = Resistência (parte real)</p>
+                    <p>X = Reatância (parte imaginária)</p>
+                </div>
+                
+                <p><strong>Tipos de impedância:</strong></p>
+                <ul>
+                    <li><strong>Resistor:</strong> Z<sub>R</sub> = R (puramente real)</li>
+                    <li><strong>Capacitor:</strong> Z<sub>C</sub> = 1/(jωC) = -j/(ωC) (reatância capacitiva)</li>
+                    <li><strong>Indutor:</strong> Z<sub>L</sub> =
